@@ -18,7 +18,7 @@ const ALL_TRANSACTIONS: Transaction[] = [
     name: "Adobe",
     description: "Pago de suscripción",
     amount: "$25",
-    type: "subs",
+    type: "SUS",
     date: "2024-01-15",
     color: "bg-purple-100 text-purple-600",
   },
@@ -27,7 +27,7 @@ const ALL_TRANSACTIONS: Transaction[] = [
     name: "Camila Montenegro",
     description: "Pago recibido",
     amount: "$45",
-    type: "cash-in",
+    type: "CASH_IN",
     date: "2024-01-14",
     color: "bg-green-100 text-green-600",
   },
@@ -36,7 +36,7 @@ const ALL_TRANSACTIONS: Transaction[] = [
     name: "Figma",
     description: "Pago de suscripción",
     amount: "$25",
-    type: "subs",
+    type: "SUS",
     date: "2024-01-13",
     color: "bg-purple-100 text-purple-600",
   },
@@ -45,7 +45,7 @@ const ALL_TRANSACTIONS: Transaction[] = [
     name: "Leonardo Echazu",
     description: "Pago enviado",
     amount: "$45",
-    type: "cash-out",
+    type: "CASH_OUT",
     date: "2024-01-12",
     color: "bg-orange-100 text-orange-600",
   },
@@ -54,7 +54,7 @@ const ALL_TRANSACTIONS: Transaction[] = [
     name: "Martín Bozzini",
     description: "Pago recibido",
     amount: "$65",
-    type: "cash-in",
+    type: "CASH_IN",
     date: "2024-01-11",
     color: "bg-green-100 text-green-600",
   },
@@ -63,7 +63,7 @@ const ALL_TRANSACTIONS: Transaction[] = [
     name: "Leonardo Echazu",
     description: "Pago enviado",
     amount: "$25",
-    type: "cash-out",
+    type: "CASH_OUT",
     date: "2024-01-10",
     color: "bg-orange-100 text-orange-600",
   },
@@ -96,11 +96,11 @@ export default function MovementsScreen({ onNavigate, currentScreen }: Movements
       filtered = filtered.filter((transaction) => {
         switch (activeFilter) {
           case "Débito Aut.":
-            return transaction.type === "subs"
+            return transaction.type === "SUS"
           case "Recibido":
-            return transaction.type === "cash-in"
+            return transaction.type === "CASH_IN"
           case "Enviado":
-            return transaction.type === "cash-out"
+            return transaction.type === "CASH_OUT"
           default:
             return true
         }

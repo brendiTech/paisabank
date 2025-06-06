@@ -5,6 +5,7 @@ import type { Screen } from "@/types"
 import Image from "next/image"
 import HomeIcon from "@/assets/Home.svg"
 import Document from "@/assets/Document.svg"
+import { LogOut } from "lucide-react"
 
 interface HomeScreenProps {
   onNavigate: (screen: Screen) => void
@@ -38,7 +39,7 @@ export default function NavigationBar({ onNavigate, currentScreen }: HomeScreenP
             className={"p-3 rounded-2xl transition-colors hover:bg-gray-50"}
             aria-label="Settings"
           >
-            <Image src={Document} alt="Logout icon" className={"w-6 h-6 text-gray-400"}/>
+            <LogOut className={"w-6 h-6 text-gray-800"}/>
           </button>
         </div>
       </div>
